@@ -29,8 +29,12 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         if (data.success) {
           errorMessage.textContent = data.message;
           document.getElementById("contactForm").reset();
+          localStorage.removeItem("fromEmail");
+          localStorage.removeItem("body");
         } else {
           errorMessage.textContent = data.message;
+          localStorage.setItem("fromEmail", fromEmail);
+          localStorage.setItem("body", body);
         }
       })
       .catch((error) => {
@@ -38,3 +42,15 @@ document.getElementById("contactForm").addEventListener("submit", function (even
       });
   }
 });
+
+// Load saved form data
+const savedFromEmail = localStorage.getItem("fromEmail");
+const savedBody = localStorage.getItem("body");
+
+if (savedFromEmail) {
+  document.getElementById("fromEmail").value = savedFromEmail;
+}
+
+if (savedBody) {
+  document.getElementById("body").value = savedBody;
+}

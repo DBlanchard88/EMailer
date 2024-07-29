@@ -46,4 +46,8 @@ Scripts should be placed in your project directory and can be run directly from 
 
 ### Contact us Operations
 - **Destroy contact us Table:** Run `contactus-destroy.php` to drop the contact us table. This is IP-restricted to ensure only the admin can drop the user table.
+<<<<<<< HEAD:private/db/README.md
 - **Insert Contact us data:** Use the `mockcontactus.php` script to insert mock contact us data into the database.
+=======
+- **Insert Contact us data:** Use the `mockcontactus.php` script to insert mock contact us data into the database.
+>>>>>>> 2e2d42be1ae5fab41f873ea5602aedb1a3f11dc5:project/private/db/README.md
